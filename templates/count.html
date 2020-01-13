@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> {{ title }} </title>
+</head>
+<body>
+	<center><h1>{{ header }}</h1></center>
+	<center>
+		<a href=" {% url 'home' %}"> Home </a> | 
+		<a href=" {% url 'aboutus' %}"> About </a>
+	</center>
+
+	<h2>Total Number of words in your text - {{ count }}</h2>
+
+	<h2>Your Text</h2>
+	<p>{{ fulltext }}</p>
+
+	<h2>Individual Word Count</h2>
+	<ul>
+	{% for k, v in  worddictcounter %}
+		<li> {{ k }} - {{ v }} </li>
+	{% endfor %}
+	</ul>
+</body>
+</html>
